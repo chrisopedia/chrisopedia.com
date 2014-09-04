@@ -1,0 +1,38 @@
+/*
+ * Web Fonts from theleagueofmoveabletype.com 
+ *
+ * The goals of the Open Font License (OFL) are to stimulate worldwide development of 
+ * collaborative font projects, to support the font creation efforts of academic and 
+ * linguistic communities, and to provide a free and open framework in which fonts may 
+ * be shared and improved in partnership with others.
+ *
+ *
+ * The OFL allows the licensed fonts to be used, studied, modified and redistributed 
+ * freely as long as they are not sold by themselves. The fonts, including any derivative 
+ * works, can be bundled, embedded, redistributed and/or sold with any software provided 
+ * that any reserved names are not used by derivative works. The fonts and derivatives, 
+ * however, cannot be released under any other type of license. The requirement for fonts 
+ * to remain under this license does not apply to any document created using the fonts or 
+ * their derivatives.
+ *
+ * (c) 2007-2009 League of Moveable Type
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Meredith Mandel
+ * License URL: http://www.fontspring.com/fflicense/exljbris
+ *
+ *
+ */
+
+@font-face {
+    font-family: 'ChunkFive';
+    src: url('/ui/vendor/chuck/webfonts/Chunkfive-webfont.eot');
+    src: url('/ui/vendor/chuck/webfonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ui/vendor/chuck/webfonts/Chunkfive-webfont.woff') format('woff'),
+         url('/ui/vendor/chuck/webfonts/Chunkfive-webfont.ttf') format('truetype'),
+         url('/ui/vendor/chuck/webfonts/Chunkfive-webfont.svg#Chunkfive-webfont.) format('svg');
+}

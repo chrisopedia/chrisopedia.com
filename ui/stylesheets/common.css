@@ -1,0 +1,67 @@
+/* Microsoft Surface responsive site tags (http://www.mobilexweb.com/blog/windows-8-surface-ie10-html5) */
+@-ms-viewport { 
+	width: device-width; 
+}
+/* iPhone 5 or iPod Touch 5th generation */
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+/* Helper class for JS enhanced content */
+.JS .Hidden {
+    position: absolute;
+    width: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+    height: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+    overflow: hidden;    
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    border: 0;
+    padding: 0;
+}
+.NoJS .Hidden {
+    display: block;
+}
+.ScreenHide {
+	display: none;
+	visibility: hidden;
+}
+.Disabled {
+    opacity: 0.5;
+    /* When set to "none" prevents elements from 
+     * receiving hover/click events; instead the 
+     * event will occur on anything behind it. 
+     * support: http://caniuse.com/#search=pointer-events */
+    pointer-events: none;
+}
+/* Increses click area on <a> when within a paragraph
+ * http://joshnh.com/2012/09/06/increasing-the-clickable-area-of-inline-links/ */
+p a {
+    position: relative;
+    margin: -.5em;
+    padding: .5em;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+}
+/* Clear fix for dynamic-height expanding boxes
+ * that are floated; only use when you can't
+ * put in the height of the box 
+ * http://nicolasgallagher.com/micro-clearfix-hack/ */
+.Clear::before,
+.Clear::after {
+    content: " ";
+    display: table;
+}
+.Clear::after {
+    clear: both;
+}
+/* IE6/7 support */
+.Clear {
+    *zoom: 1;
+}
+img {
+    max-width: 100%;
+}
+button,
+input[type="submit"] {
+    border: 0;
+    background: none;
+}

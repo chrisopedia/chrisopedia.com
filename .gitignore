@@ -1,0 +1,31 @@
+# Mac OS X files
+.DS_Store
+
+# Wordpress Files
+wp-config.php
+wordpress/wp-config.php
+wp-content/uploads/
+media/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/
+wp-content/backups/
+
+media/2010/
+media/2011/
+media/2012/
+media/2013/
+
+# Server Files
+*.log
+sitemap.xml
+sitemap.xml.gz
+
+# Packages
+node_modules
+
+# Generated / Build files
+ui/compressed

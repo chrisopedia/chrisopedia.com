@@ -1,0 +1,92 @@
+/* Media Query debug mode (http://johanbrook.com/design/css/debugging-css-media-queries/) */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+	.Debug::before {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 99;
+		/* Semi-transparent yellow */
+		background-color: rgba(255,255,0, 0.9);
+		font-weight: bold;
+		text-align: center;
+		content: "Tablet media query (768 < 979) fired";
+	}
+}
+/* Empty Elements */
+.Debug div:empty, 
+.Debug span:empty,
+.Debug li:empty,
+.Debug p:empty,
+.Debug td:empty,
+.Debug th:empty { 
+    padding: 20px; 
+    border: 5px dotted yellow !important;
+}
+/* Empty Attributes */
+.Debug *[alt=""], 
+.Debug *[title=""], 
+.Debug *[class=""], 
+.Debug *[id=""], 
+.Debug a[href=""] { 
+    border: 5px solid yellow !important;
+}
+
+/* Deprecated Elements */
+.Debug applet, 
+.Debug basefont, 
+.Debug center, 
+.Debug dir, 
+.Debug font, 
+.Debug isindex, 
+.Debug menu, 
+.Debug s, 
+.Debug strike, 
+.Debug u {
+    border: 5px dotted red !important;
+}
+
+/* Deprecated Attributes */
+.Debug *[background], 
+.Debug *[bgcolor], 
+.Debug *[clear], 
+.Debug *[color], 
+.Debug *[compact], 
+.Debug *[noshade], 
+.Debug *[nowrap], 
+.Debug *[size], 
+.Debug *[start],
+.Debug *[bottommargin], 
+.Debug *[leftmargin], 
+.Debug *[rightmargin], 
+.Debug *[topmargin], 
+.Debug *[marginheight], 
+.Debug *[marginwidth], 
+.Debug *[alink], 
+.Debug *[link], 
+.Debug *[text], 
+.Debug *[vlink],
+.Debug *[align], 
+.Debug *[valign],
+.Debug *[hspace], 
+.Debug *[vspace],
+.Debug *[height], 
+.Debug *[width],
+.Debug ul[type], 
+.Debug ol[type], 
+.Debug li[type] {
+    border: 5px solid red !important;
+}
+/* Proposed Deprecated Elements */
+.Debug input[type="button"], 
+.Debug big, 
+.Debug tt {
+    border: 5px dotted #33FF00 !important;
+}
+/* Proposed Deprecated Attributes */
+.Debug *[border], 
+.Debug table[cellpadding], 
+.Debug table[cellspacing] { 
+    border: 5px solid #33FF00 !important;
+}

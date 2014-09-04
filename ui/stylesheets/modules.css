@@ -1,0 +1,61 @@
+/* Standard Implementation of Icons */
+.Icon {
+    position: relative;
+}
+.Icon.before {
+    padding-left: 2.5rem;
+}
+.Icon.after {
+    padding-right: 2.5rem;
+}
+.Icon.solo {
+    font-family: 'SS Standard';
+}
+.Icon.before::before,
+.Icon.after::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.6em;
+    font-family: 'SS Standard';
+    content: attr( data-icon );
+    speak: none; /* Not to be trusted, but hey. */
+    transition: all .25s linear;
+}
+a.Icon:hover::before,
+a.Icon:hover::after {
+    color: dodgerblue;
+}
+/* Alignment Options */
+.Icon.before::before {
+    left: 0;
+    margin-right: 5px;
+}
+.Icon.after::after {
+    right: 0;
+    margin-left: 5px;
+}
+/* Social font */
+.Icon.social::before,
+.Icon.social::after,
+.Icon.social.solo {
+    font-family: 'SS Social';
+}
+.Search {
+    position: relative;
+    margin-bottom: 1em;
+    border-radius: 20px;
+    padding: 0 .25em;
+    background-color: rgba(255,255,255,.5);
+    font-size: 1em;
+}
+    .Search .text {
+        width: 96%;
+        border: 0;
+        background: transparent;
+    }
+    .Search .submit {
+        position: absolute;
+        right: .25em;
+        top: 50%;
+        margin-top: -.65em;
+    }

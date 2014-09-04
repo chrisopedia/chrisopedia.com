@@ -1,0 +1,162 @@
+html {
+    font-family: Prociono, Palantino, Georgia, serif;
+    font-size: 62.5%;
+    color: rgb(50,50,50);
+}
+body { 
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+}
+::-webkit-input-placeholder {  
+    color: rgb(0,0,0);
+}
+/* one preventing the text to break out of 
+ * their container (such as an URL) by 
+ * forcing the break. 
+ * http://tympanus.net/codrops/2012/10/25/kick-start-your-project-a-collection-of-handy-css-snippets/ */
+.Break {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+pre {
+    white-space: pre-wrap;       /* Chrome & Safari */
+    white-space: -moz-pre-wrap;  /* Mozilla since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* this will truncate all content to 1 line */
+.Ellipsis {
+    width: {{ container.width }};
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis; /* Required for IE8 */
+    -o-text-overflow: ellipsis; /* Required for Opera */
+    text-overflow: ellipsis;
+}
+/* -----Typography----- */ 
+/* Set to 'none', it'll prevent text resizing when Cmd +/- (http://css-infos.net/property/-webkit-text-size-adjust) */
+body {
+	webkit-text-size-adjust: none;
+}
+/* Indent all paragraphs except first one by 1em (https://twitter.com/LeaVerou/statuses/153165857206448128) */
+p:not(:first-of-type) { 
+	text-indent: 1em;
+}
+h2,
+time,
+.Header .tagline {
+    font-family: Effra, Verdana, sans-serif;
+}
+.Header .logo {
+    color: dodgerblue;
+    font-family: 'ChunkFive';
+    font-size: 60px;
+    font-size: 6rem;
+    letter-spacing: -3px;
+    line-height: 1;
+    text-shadow: 1px 1px 0 rgb(72,136,239), 
+                 2px 2px 0 rgb(72,136,239), 
+                 3px 3px 0 rgb(72,136,239), 
+                 4px 4px 0 white, 
+                 5px 5px 0 rgb(72,136,239);
+}
+h1,
+.Heading1 { 
+    font-size: 72px; 
+    font-size: 7.2rem; 
+    line-height: 1.23em; 
+}
+    h1 a,
+    .Heading1 a,
+    .Heading1 .url {
+        color: rgb(50,50,50);
+    }
+    h1 a:hover,
+    .Heading1 a:hover,
+    .Heading1 .url:hover {
+        background-color: rgb(210,57,57);
+        color: rgb(255,255,255);
+        text-shadow: 0 1px 1px rgb(0,0,0);
+    }
+h2,
+.Heading2 { 
+    font-size: 30px; 
+    font-size: 3.0rem; 
+    line-height: 1.5em; 
+}
+h3,
+.Heading3 { 
+    text-transform: uppercase; 
+    letter-spacing: .2em; 
+    font-style: italic; 
+}
+p { 
+    max-width: 40em;
+    margin: 1.5em 0; 
+    text-align: justify; 
+    hyphens: auto; 
+    hyphen: auto; 
+}
+    p a {
+        text-decoration: underline;
+    }
+    p a:hover {
+        text-decoration: none;
+    }
+a,
+.url { 
+    color: rgb(210,57,57);
+    text-decoration: none;
+    transition: all .25s linear; 
+}
+a:hover,
+.url:hover {
+    color: dodgerblue;
+}
+abbr { 
+    text-transform: lowercase; 
+    font-variant: small-caps; 
+    font-size: 1.1em; 
+}
+blockquote { 
+    font-style: italic; 
+    font-size: 18px; 
+    font-size: 1.8rem; 
+    line-height: 1.4em; 
+}
+blockquote + em { 
+    font-style: normal; 
+}
+sup { 
+    position: relative; 
+    top: -1em; 
+    font-size: 8px; 
+    font-size: .8rem; 
+}
+time {
+    font-weight: 100;
+}
+small {
+    font-size: .25em;
+}
+.Post .subtitle {
+    font-weight: normal;
+    line-height: 1em;
+}
+.Aside { 
+    text-align: left; 
+    hyphens: auto; 
+    hyphen: auto; 
+}
+.Footer,
+.Footer .url {
+    color: hsla(0,63%,40%,1);
+    font-size: 4rem;
+}

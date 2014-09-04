@@ -1,0 +1,51 @@
+/*
+ * Web Fonts from fontshop.com 
+ *
+ * (c) 2010 Font Shop
+ *
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Font Shop. The fonts are protected under domestic and international trademark and 
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ *
+ * The fonts included are copyrighted by the fonts listed below.
+ *
+ * fonts:      Dalton Maag Ltd.
+ * License URL: http://www.fontshop.com/licenses/dalton_maag/effra_std_regular/
+ *
+ *
+ * Available Styles: italic, light, light italic, medium, medium italic
+ */
+
+@font-face {
+    font-family: 'Effra';
+    src: url('/ui/fonts/effra/effra-regular-webfont.eot');
+    src: url('/ui/fonts/effra/effra-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ui/fonts/effra/effra-regular-webfont.woff') format('woff'),
+         url('/ui/fonts/effra/effra-regular-webfont.ttf') format('truetype'),
+         url('/ui/fonts/effra/effra-regular-webfont.svg#effra-regular.) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Effra';
+    src: url('/ui/fonts/effra/effra-medium-webfont.eot');
+    src: url('/ui/fonts/effra/effra-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ui/fonts/effra/effra-medium-webfont.woff') format('woff'),
+         url('/ui/fonts/effra/effra-medium-webfont.ttf') format('truetype'),
+         url('/ui/fonts/effra/effra-medium-webfont.svg#effra-medium.) format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Effra';
+    src: url('/ui/fonts/effra/effra-light-webfont.eot');
+    src: url('/ui/fonts/effra/effra-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ui/fonts/effra/effra-light-webfont.woff') format('woff'),
+         url('/ui/fonts/effra/effra-light-webfont.ttf') format('truetype'),
+         url('/ui/fonts/effra/effra-light-webfont.svg#effra-medium.) format('svg');
+    font-weight: 100;
+    font-style: normal;
+}

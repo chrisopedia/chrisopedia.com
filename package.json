@@ -1,0 +1,42 @@
+{
+	"name" : "chrisopedia.com",
+	"private" : true,
+	"version" : "1.0.0",
+	"homepage" : "http://chrisopedia.com/",
+	"author" : {
+		"name" : "Newton",
+		"url" : "http://chrisopedia.com/about"
+	},
+	"description" : "Portfolio for Newton of Chrisopedia",
+	"keywords" : [
+		"chrisopedia",
+		"wordpress",
+		"portfolio"
+	],
+	"main" : [
+		"./ui/compressed/common.css",
+		"./ui/compressed/common.js"
+	],
+	"repository" : {
+		"type" : "git",
+		"url" : "git://github.com/chrisopedia/chrisopedia.com.git"
+	},
+	"bugs": {
+		"url" : "https://github.com/chrisopedia/chrisopedia.com/issues"
+	},
+	"licenses": [
+		{
+			"type" : "MIT",
+			"url" : "https://github.com/chrisopedia/chrisopedia.com/blob/master/LICENSE.md"
+		}
+	],
+	"devDependencies" : {
+		"grunt" : "~0.4.1",
+		"grunt-contrib-clean" : "~0.4.1",
+		"grunt-contrib-concat" : "~0.3.0",
+		"grunt-contrib-cssmin" : "~0.6.1",
+		"grunt-contrib-jshint" : "~0.6.0",
+		"grunt-contrib-uglify" : "~0.2.2",
+		"grunt-contrib-watch" : "~0.4.4"
+	}
+}

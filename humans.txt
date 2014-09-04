@@ -1,0 +1,31 @@
+# humanstxt.org/
+
+/* TEAM */
+	Developer: Newton
+	Contact: chrisohpedia [at] gmail
+	Twitter: @chrisopedia
+	Github: https://github.com/chrisopedia
+	From: Redondo Beach, California, United States
+
+	Icons?
+	Illustrations
+	Typography
+	SEO
+
+/* THANKS */
+	Translators?
+	External work (media queries)
+
+	Design Inspiration: Russ Maschmeyer
+	Twitter: @strangenative
+	From: San Francisco, California, United States
+
+	Self-Portrait Illustration: Rob Dobi
+	Twitter: @robdobi
+	From: Bridgeport, Connecticut, United States
+
+/* SITE */
+	Last updated: 2013/08/21
+	Language: English
+	Doctype: HTML5
+	IDE: ViM using http://chrisopedia.github.io/dotfiles

@@ -1,0 +1,124 @@
+html,
+body {
+    background-color: rgb(210,57,57);
+}
+body {
+    transition: all .25s linear;
+}
+.Header,
+.Body {
+    background-color: rgb(246,246,246);
+}
+.skip-link, 
+.assistive-text { 
+    display: none; 
+}
+
+/* ----- Header ----- */
+.Header {
+    padding: 4em 1em 1.5em;
+}
+    .Header .logo {
+        display: block;
+    }
+    .Header .tagline {
+        margin: -.25em 0 0;
+    }
+    .Header .Navigation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+    }
+
+/* ----- Navigation ----- */
+.Navigation {
+    overflow: hidden;
+}
+    .Navigation .listing {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .Navigation .item,
+    .Navigation .previous,
+    .Navigation .next {
+        display: inline;
+        float: left;
+    }
+    .Navigation .item {
+        padding: 1em 1.5em;
+    }
+    .Navigation .previous,
+    .Navigation .next {
+        width: 43%;
+        line-height: 1.2em;
+    }
+    .Navigation .previous::before {
+        float: left;
+    }
+    .Navigation .next::after {
+        float: right;
+    }
+    .Navigation .next {
+        float: right;
+        text-align: right;
+    }
+
+/* ----- Body ----- */
+.Body {
+    padding: 1em;
+}
+
+.Breadcrumbs {
+    margin: 0 0 1rem;
+    padding: 0;
+}
+    .Breadcrumbs .item {
+        display: inline-block;
+        margin-right: .5rem;
+        color: rgb(175,175,175);
+    }
+    .Breadcrumbs a {
+        color: rgb(225,225,225);
+    }
+    .Breadcrumbs .item::after {
+        margin-left: .5rem;
+        color: rgb(225,225,225);
+        font-size: 2rem;
+        content: '\00BB';
+    }
+    .Breadcrumbs .Icon.solo {
+        position: relative;
+        top: 1px;
+        text-shadow: -1px 0px 0 rgb(255,255,255);
+    }
+    .Breadcrumbs .Icon.solo::after {
+        position: relative;
+        top: -1px;
+    }
+    .Breadcrumbs .item:last-child::after {
+        content: '';
+    }
+
+/* ----- Footer ----- */
+.Footer {
+    box-shadow: 0 15px 15px rgba(0,0,0,.25) inset;
+    padding: 1.5em 1em
+}
+    .Footer .listing {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+    .Footer .item {
+        display: inline-block;
+        margin: 0 .5em;
+        line-height: 1;
+    }
+    .Footer .url {
+        display: block;
+        text-shadow: -1px -1px 0 hsla(0,93%,20%,1);
+    }

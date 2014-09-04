@@ -1,0 +1,9 @@
+[submodule "wordpress"]
+	path = wordpress
+	url = https://github.com/WordPress/WordPress.git
+[submodule "ui/vendor/prociono"]
+	path = ui/vendor/prociono
+	url = https://github.com/theleagueof/prociono.git
+[submodule "ui/vendor/chunk"]
+	path = ui/vendor/chunk
+	url = https://github.com/theleagueof/chunk.git

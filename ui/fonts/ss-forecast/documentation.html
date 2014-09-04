@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html class='no-js'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>SS Forecast v1.000</title>
+    <link rel="stylesheet" href="webfonts/ss-forecast.css">
+    <style>
+      body{background:#fff;color:#34343f;font-family:"Helvetica Neue", helvetica, sans-serif;font-size:16px;line-height:1.6;margin:0;}
+      h2{font-size:48px;font-weight:200;line-height:1;margin:.333em 0 0;}
+      h3{font-size:16px;font-weight:400;line-height:1.2;margin:4px 0 36px;}
+      a{color:#34343f;text-decoration:none;border-bottom:2px solid #ccc;}
+      a:hover,a:active{border-bottom:2px solid #3bc492;}
+      table{border-collapse:collapse;border-spacing:0;width:100%;}
+      table tr{border-top:2px solid #ddd;}
+      table td{padding-bottom:15px;padding-top:18px;vertical-align:top;}
+      .set{margin-bottom:84px;position:relative;}
+      .encode,.keyword{width:41.667%;}
+      .keyword a.note{color:#33ab7f;border-bottom:none;}
+      .css,.keyword li{white-space:nowrap;}
+      .ss-icon{padding-left:0;width:16.667%;font-size:36px;-webkit-transition: all .4s ease-out;-moz-transition: all .4s ease-out;-ms-transition: all .4s ease-out;-o-transition: all .4s ease-out;transition: all .4s ease-out;}
+      .open .ss-icon{padding-left:18px;-webkit-transition: all .3s cubic-bezier(0,.8,.7,1.5);;-moz-transition: all .3s cubic-bezier(0,.8,.7,1.5);;-ms-transition: all .3s cubic-bezier(0,.8,.7,1.5);;-o-transition: all .3s cubic-bezier(0,.8,.7,1.5);;transition: all .3s cubic-bezier(0,.8,.7,1.5);}
+      .encode{font-size:16px;padding-right:20px;}
+      .unicode{color:rgba(55,55,63,.5);}
+      .off,button{color:#ddd;}
+      .views {position:absolute;top:5px;right:0;}
+      .toggle-list {color:#34343f;}
+      .toggle-list, .toggle-grid {font-size:32px;cursor:pointer;outline:0;border:0;background:none;width:auto!important;padding:0;}
+      p.note{font-size:16px;}
+      td ul{list-style:none;margin:0;padding:0;}
+      .wrapper{max-width:468px;margin:120px auto 132px;padding:0 6.25%;}
+      footer{background-color:#eee;color:rgba(52,52,63,.9);overflow:hidden;position:relative;font-size:16px;padding:60px 0 60px;}
+      footer ul{margin:0;padding:0;list-style:none;}
+      footer li{float:left;margin-right:1em;}
+      footer .copyright{float:right;margin:0;position:relative;}
+      footer span, footer span a{vertical-align:top;}
+      footer .wrapper{margin:auto;}
+      footer a{color:rgba(52,52,63,.9);border-bottom:2px solid #ccc;}
+      footer a:hover,footer a:active{color:rgba(52,52,63,.9);border-bottom:2px solid #3bc492;}
+      #placeholder {width:72px;}
+      body.grid .wrapper{max-width:80%;}
+      body.grid .toggle-list {color:#ddd;}
+      body.grid .toggle-grid {color:#34343f;}
+      body.grid table tr{display:block;float:left;width:auto;max-width:72px;cursor:pointer;height:78px;}
+      body.grid table {position:relative;}
+      body.grid .ss-icon{text-align:center;padding-right:0;width:72px;}
+      body.grid .encode, body.grid .keyword{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
+      body.grid tr.open{position:absolute;max-width:99em;height:auto;background:#eee;border-top:2px solid #3bc492;-webkit-border-bottom-right-radius:6px;-webkit-border-bottom-left-radius:6px;-moz-border-radius-bottomright:6px;-moz-border-radius-bottomleft:6px;-ms-border-radius-bottomright:6px;-ms-border-radius-bottomleft:6px;border-bottom-right-radius:6px;border-bottom-left-radius:6px;}
+      body.grid tr.open .encode, body.grid tr.open .keyword{clip:auto;height:auto;margin:0;overflow:visible;width:auto;position:static;padding:0 20px 20px;display:block;text-align:left;}
+      body.grid .open .keyword{top:70px;}
+      @media screen and (max-width:760px){.wrapper{margin-top:84px;}footer .wrapper{margin:auto;}}
+      @media screen and (max-width:540px){h2{font-size:32px;}.wrapper{width:432px;}}
+      .off,.on{cursor:pointer;}
+      ::-moz-selection{color:#fff;background:#3bc492;}
+      ::selection{color:#fff;background:#3bc492;}
+    </style>
+  </head>
+  <body>
+
+    <div class="wrapper centered">
+
+      <section class="set">
+        <h2>SS Forecast</h2>
+        <h3><span class="on">Regular</span></h3>
+
+
+        <table cellpadding="10px">
+        <tr>
+            <td class='ss-icon'>
+                &#x2600;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-sun</li>
+                    <li class='unicode'>&amp;#x2600;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>sun</li>
+                    <li>sunny</li>
+                    <li>clear</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F319;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-crescentmoon</li>
+                    <li class='unicode'>&amp;#x1F319;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>crescentmoon</li>
+                    <li>crescent moon <a href='#spaces' class='note'>*</a></li>
+                    <li>moon</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x2601;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-cloud</li>
+                    <li class='unicode'>&amp;#x2601;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>cloud</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF220;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-clouds</li>
+                    <li class='unicode'>&amp;#xF220;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>clouds</li>
+                    <li>cloudy</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x26C5;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-partlycloudy</li>
+                    <li class='unicode'>&amp;#x26C5;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>partlycloudy</li>
+                    <li>partly cloudy <a href='#spaces' class='note'>*</a></li>
+                    <li>partlysunny</li>
+                    <li>partly sunny <a href='#spaces' class='note'>*</a></li>
+                    <li>cloudyday</li>
+                    <li>cloudy day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF221;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-cloudynight</li>
+                    <li class='unicode'>&amp;#xF221;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>cloudynight</li>
+                    <li>cloudy night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF222;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-mostlycloudyday</li>
+                    <li class='unicode'>&amp;#xF222;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>mostlycloudyday</li>
+                    <li>mostly cloudy day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF223;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-mostlycloudynight</li>
+                    <li class='unicode'>&amp;#xF223;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>mostlycloudynight</li>
+                    <li>mostly cloudy night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F308;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-rainbow</li>
+                    <li class='unicode'>&amp;#x1F308;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>rainbow</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F320;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-shootingstar</li>
+                    <li class='unicode'>&amp;#x1F320;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>shootingstar</li>
+                    <li>shooting star <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x2614;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-rain</li>
+                    <li class='unicode'>&amp;#x2614;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>rain    </li>
+                    <li>rainy</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x26C6;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-heavyrain</li>
+                    <li class='unicode'>&amp;#x26C6;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>heavyrain</li>
+                    <li>heavy rain <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF225;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-rainyday</li>
+                    <li class='unicode'>&amp;#xF225;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>rainyday</li>
+                    <li>rainy day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF226;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-rainynight</li>
+                    <li class='unicode'>&amp;#xF226;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>rainynight</li>
+                    <li>rainy night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF227;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-freezingrain</li>
+                    <li class='unicode'>&amp;#xF227;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>freezingrain</li>
+                    <li>freezing rain <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF228;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-heavyfreezingrain</li>
+                    <li class='unicode'>&amp;#xF228;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>heavyfreezingrain</li>
+                    <li>heavy freezing rain <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF229;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-freezingrainday</li>
+                    <li class='unicode'>&amp;#xF229;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>freezingrainday</li>
+                    <li>freezing rain day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF22A;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-freezingrainnight</li>
+                    <li class='unicode'>&amp;#xF22A;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>freezingrainnight</li>
+                    <li>freezing rain night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF231;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-snow</li>
+                    <li class='unicode'>&amp;#xF231;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>snow</li>
+                    <li>mediumsnow</li>
+                    <li>medium snow <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF232;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-heavysnow</li>
+                    <li class='unicode'>&amp;#xF232;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>heavysnow</li>
+                    <li>heavy snow <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF233;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-snowday</li>
+                    <li class='unicode'>&amp;#xF233;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>snowday</li>
+                    <li>snow day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF234;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-snownight</li>
+                    <li class='unicode'>&amp;#xF234;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>snownight</li>
+                    <li>snow night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF235;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-rainsnow</li>
+                    <li class='unicode'>&amp;#xF235;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>rainsnow</li>
+                    <li>rain snow <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF236;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-heavyrainsnow</li>
+                    <li class='unicode'>&amp;#xF236;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>heavyrainsnow</li>
+                    <li>heavy rain snow <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF237;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-rainsnowday</li>
+                    <li class='unicode'>&amp;#xF237;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>rainsnowday</li>
+                    <li>rain snow day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF238;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-rainsnownight</li>
+                    <li class='unicode'>&amp;#xF238;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>rainsnownight</li>
+                    <li>rain snow night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF23B;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-sleet</li>
+                    <li class='unicode'>&amp;#xF23B;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>sleet</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF23C;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-heavysleet</li>
+                    <li class='unicode'>&amp;#xF23C;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>heavysleet</li>
+                    <li>heavy sleet <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF23D;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-sleetday</li>
+                    <li class='unicode'>&amp;#xF23D;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>sleetday</li>
+                    <li>sleet day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF23E;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-sleetnight</li>
+                    <li class='unicode'>&amp;#xF23E;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>sleetnight</li>
+                    <li>sleet night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F4A7;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-droplet</li>
+                    <li class='unicode'>&amp;#x1F4A7;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>drop</li>
+                    <li>droplet</li>
+                    <li>raindrop</li>
+                    <li>rain drop <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF22B;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-droplets</li>
+                    <li class='unicode'>&amp;#xF22B;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>droplets</li>
+                    <li>raindrops</li>
+                    <li>rain drops <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF239;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-pellet</li>
+                    <li class='unicode'>&amp;#xF239;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>pellet</li>
+                    <li>ice</li>
+                    <li>icepellet</li>
+                    <li>ice pellet <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF23A;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-pellets</li>
+                    <li class='unicode'>&amp;#xF23A;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>pellets</li>
+                    <li>icepellets</li>
+                    <li>ice pellets <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x2744;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-snowflake</li>
+                    <li class='unicode'>&amp;#x2744;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>snowflake</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF241;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-snowflakes</li>
+                    <li class='unicode'>&amp;#xF241;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>snowflakes</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF242;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-snowflakedrops</li>
+                    <li class='unicode'>&amp;#xF242;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>snowflakedrops</li>
+                    <li>snowflake drops <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF243;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-snowflakepellets</li>
+                    <li class='unicode'>&amp;#xF243;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>snowflakepellets</li>
+                    <li>snowflake pellets <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x22C6;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-star</li>
+                    <li class='unicode'>&amp;#x22C6;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>star</li>
+                    <li>favorite</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xE1B0;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-stars</li>
+                    <li class='unicode'>&amp;#xE1B0;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>stars</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF244;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-hail</li>
+                    <li class='unicode'>&amp;#xF244;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>hail</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF245;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-heavyhail</li>
+                    <li class='unicode'>&amp;#xF245;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>heavyhail</li>
+                    <li>heavy hail <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF246;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-hailday</li>
+                    <li class='unicode'>&amp;#xF246;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>hailday</li>
+                    <li>hail day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF247;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-hailnight</li>
+                    <li class='unicode'>&amp;#xF247;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>hailnight</li>
+                    <li>hail night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x26C8;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-thunderstorm</li>
+                    <li class='unicode'>&amp;#x26C8;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>thunderstorm</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF249;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-thunderstormday</li>
+                    <li class='unicode'>&amp;#xF249;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>thunderstormday</li>
+                    <li>thunderstorm day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF24A;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-thunderstormnight</li>
+                    <li class='unicode'>&amp;#xF24A;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>thunderstormnight</li>
+                    <li>thunderstorm night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x2607;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-lightning</li>
+                    <li class='unicode'>&amp;#x2607;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>lightning</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF24E;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-lightningbolts</li>
+                    <li class='unicode'>&amp;#xF24E;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>lightningbolts</li>
+                    <li>lightning bolts <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF212;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-wind</li>
+                    <li class='unicode'>&amp;#xF212;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>wind</li>
+                    <li>windy</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF24B;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-windrain</li>
+                    <li class='unicode'>&amp;#xF24B;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>windrain</li>
+                    <li>wind rain <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF24C;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-windsnow</li>
+                    <li class='unicode'>&amp;#xF24C;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>windsnow</li>
+                    <li>wind snow <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF24D;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-windpellets</li>
+                    <li class='unicode'>&amp;#xF24D;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>windpellets</li>
+                    <li>wind pellets <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF248;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-dust</li>
+                    <li class='unicode'>&amp;#xF248;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>dust</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF250;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-haze</li>
+                    <li class='unicode'>&amp;#xF250;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>haze</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF251;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-hazeday</li>
+                    <li class='unicode'>&amp;#xF251;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>hazeday</li>
+                    <li>haze day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF252;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-hazenight</li>
+                    <li class='unicode'>&amp;#xF252;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>hazenight</li>
+                    <li>haze night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF211;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-fog</li>
+                    <li class='unicode'>&amp;#xF211;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>fog</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF253;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-fogday</li>
+                    <li class='unicode'>&amp;#xF253;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>fogday</li>
+                    <li>fog day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF254;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-fognight</li>
+                    <li class='unicode'>&amp;#xF254;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>fognight</li>
+                    <li>fog night <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF205;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-fullthermometer</li>
+                    <li class='unicode'>&amp;#xF205;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>fullthermometer</li>
+                    <li>full thermometer <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF206;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-highthermometer</li>
+                    <li class='unicode'>&amp;#xF206;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>highthermometer</li>
+                    <li>high thermometer <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF201;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-thermometer</li>
+                    <li class='unicode'>&amp;#xF201;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>thermometer</li>
+                    <li>temperature</li>
+                    <li>mediumthermometer</li>
+                    <li>medium thermometer <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF208;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-lowthermometer</li>
+                    <li class='unicode'>&amp;#xF208;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>lowthermometer</li>
+                    <li>low thermometer <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF209;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-emptythermometer</li>
+                    <li class='unicode'>&amp;#xF209;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>emptythermometer</li>
+                    <li>empty thermometer <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF20C;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-thermometersnowflake</li>
+                    <li class='unicode'>&amp;#xF20C;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>thermometersnowflake</li>
+                    <li>thermometer snowflake <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF20A;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-thermometerday</li>
+                    <li class='unicode'>&amp;#xF20A;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>thermometerday</li>
+                    <li>thermometer day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF20B;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-emptythermometerday</li>
+                    <li class='unicode'>&amp;#xF20B;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>emptythermometerday</li>
+                    <li>empty thermometer day <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F307;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-sunset</li>
+                    <li class='unicode'>&amp;#x1F307;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>sunset</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F305;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-sunrise</li>
+                    <li class='unicode'>&amp;#x1F305;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>sunrise</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F311;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-newmoon</li>
+                    <li class='unicode'>&amp;#x1F311;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>newmoon</li>
+                    <li>new moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F312;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-waxingcrescentmoon</li>
+                    <li class='unicode'>&amp;#x1F312;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>waxingcrescentmoon</li>
+                    <li>waxing crescent moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F313;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-firstquartermoon</li>
+                    <li class='unicode'>&amp;#x1F313;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>firstquartermoon</li>
+                    <li>first quarter moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F314;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-waxinggibbousmoon</li>
+                    <li class='unicode'>&amp;#x1F314;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>waxinggibbousmoon</li>
+                    <li>waxing gibbous moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F315;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-fullmoon</li>
+                    <li class='unicode'>&amp;#x1F315;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>fullmoon</li>
+                    <li>full moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F316;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-waninggibbousmoon</li>
+                    <li class='unicode'>&amp;#x1F316;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>waninggibbousmoon</li>
+                    <li>waning gibbous moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F317;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-lastquartermoon</li>
+                    <li class='unicode'>&amp;#x1F317;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>lastquartermoon</li>
+                    <li>last quarter moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F318;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-waningcrescentmoon</li>
+                    <li class='unicode'>&amp;#x1F318;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>waningcrescentmoon</li>
+                    <li>waning crescent moon <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F300;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-hurricane</li>
+                    <li class='unicode'>&amp;#x1F300;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>hurricane</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF213;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-tornado</li>
+                    <li class='unicode'>&amp;#xF213;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>tornado</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xE671;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-compass</li>
+                    <li class='unicode'>&amp;#xE671;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>compass</li>
+                    <li>north</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF531;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-northeast</li>
+                    <li class='unicode'>&amp;#xF531;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>northeast</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF532;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-east</li>
+                    <li class='unicode'>&amp;#xF532;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>east</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF533;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-southeast</li>
+                    <li class='unicode'>&amp;#xF533;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>southeast</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF534;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-south</li>
+                    <li class='unicode'>&amp;#xF534;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>south</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF535;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-southwest</li>
+                    <li class='unicode'>&amp;#xF535;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>southwest</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF536;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-west</li>
+                    <li class='unicode'>&amp;#xF536;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>west</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF537;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-northwest</li>
+                    <li class='unicode'>&amp;#xF537;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>northwest</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF255;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-smoke</li>
+                    <li class='unicode'>&amp;#xF255;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>smoke</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x2602;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-umbrella</li>
+                    <li class='unicode'>&amp;#x2602;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>umbrella</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x1F6A1;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-skylift</li>
+                    <li class='unicode'>&amp;#x1F6A1;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>skylift</li>
+                    <li>sky lift <a href='#spaces' class='note'>*</a></li>
+                    <li>lifttram</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF381;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-doublelift</li>
+                    <li class='unicode'>&amp;#xF381;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>doublelift</li>
+                    <li>double lift <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF382;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-triplelift</li>
+                    <li class='unicode'>&amp;#xF382;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>triplelift</li>
+                    <li>triple lift <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF383;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-quadlift</li>
+                    <li class='unicode'>&amp;#xF383;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>quadlift</li>
+                    <li>quad lift <a href='#spaces' class='note'>*</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x26F0;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-mountains</li>
+                    <li class='unicode'>&amp;#x26F0;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>mountains</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#x26A0;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-alert</li>
+                    <li class='unicode'>&amp;#x26A0;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>alert</li>
+                    <li>warning</li>
+                    <li>caution</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF390;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-easy</li>
+                    <li class='unicode'>&amp;#xF390;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>easy</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF391;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-intermediate</li>
+                    <li class='unicode'>&amp;#xF391;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>intermediate</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF392;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-difficult</li>
+                    <li class='unicode'>&amp;#xF392;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>difficult</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class='ss-icon'>
+                &#xF393;
+            </td>
+            <td class='encode'>
+                <ul>
+                    <li class='css'>.ss-expert</li>
+                    <li class='unicode'>&amp;#xF393;</li>
+                </ul>
+            </td>
+            <td class='keyword'>
+                <ul>
+                    <li>expert</li>
+                </ul>
+            </td>
+        </tr>
+        </table>
+
+
+      </section>
+
+      <p class='note'><a name='spaces'>*</a>Note: Keywords with spaces are <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=761442" style="font-weight:400;">not currently supported in Firefox</a>.</p>
+
+    </div>
+    <footer>
+      <div class="wrapper">
+        <nav>
+          <ul>
+            <li>
+              <a href="http://symbolset.com">Symbolset</a>
+            </li>
+            <li>
+              <a href="http://symbolset.com/license">License</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright">
+          <span>
+            Copyright © 2013
+            <a href="http://oak.is" target="_blank">Oak Studios LLC</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional Javascript for legacy browser support -->
+    <script src="webfonts/ss-forecast.js"></script>
+
+    <script>
+      try {
+        (function(){
+          // Select unicode values onclick.
+          function c(e){e.stopPropagation();if(document.body.createTextRange){var a=document.body.createTextRange();a.moveToElementText(this);a.select()}else if(window.getSelection){var b=window.getSelection(),a=document.createRange();a.selectNodeContents(this);b.removeAllRanges();b.addRange(a)}}for(var b=Array.prototype.slice.call(document.getElementsByClassName("unicode")),l=Array.prototype.slice.call(document.getElementsByTagName("li")),a=Array.prototype.slice.call(document.getElementsByClassName("css")),b=b.concat(a),b=b.concat(l),a=b.length-1;0<=a;a--)b[a].addEventListener("click",c,!1);
+
+          // Toggle Icon Style
+          (function(){
+            var spans = document.getElementsByTagName('span')
+              , on = document.getElementsByClassName('on')[0]
+              , off = document.getElementsByClassName('off')[0]
+              , icons = document.getElementsByClassName('ss-icon')
+              , toggleOn = function (e){
+                if (e.target === off){
+                  addClass(off, 'on');
+                  addClass(on, 'off');
+                  for (var i = icons.length - 1; i >= 0; i--) {
+                    icons[i].setAttribute('style', 'font-weight:bold;')
+                  };
+                } else {
+                  addClass(off, 'off');
+                  addClass(on, 'on');
+                  for (var i = icons.length - 1; i >= 0; i--) {
+                    icons[i].setAttribute('style', '')
+                  };
+                };
+              };
+            if (on && off){
+              for (var i = spans.length - 1; i >= 0; i--) {
+                spans[i].addEventListener('click', toggleOn, false);
+              }
+            }
+          })();
+
+          // Toggle View Style
+          var grid = document.getElementsByClassName('toggle-grid')[0]
+            , list = document.getElementsByClassName('toggle-list')[0]
+            , body = document.body
+
+          grid.addEventListener('click', function(e){
+            e.preventDefault()
+            addClass(body, 'grid')
+          }, false)
+
+          list.addEventListener('click', function(e){
+            e.preventDefault()
+            removeClass(body, 'grid')
+          }, false)
+
+          // Grid view active
+          var tr = document.getElementsByTagName('tr')
+
+          document.addEventListener('click', hideDetails, false);
+
+          function hideDetails() {
+            var placeholder = document.getElementById('placeholder');
+            if (placeholder) {
+              placeholder.parentNode.removeChild(placeholder);
+            }
+            (function(){
+              for (var i = tr.length - 1; i >= 0; i--) {
+                tr[i].setAttribute('style','')
+                removeClass(tr[i], 'open')
+              };
+            })();
+          }
+
+          function showDetails(e){
+            var item = e.target.parentNode;
+            if (hasClass(body, 'grid') && !hasClass(item,  'open')) {
+              e.stopPropagation()
+              hideDetails()
+
+              var left = item.offsetLeft
+                , top = item.offsetTop
+
+              item.setAttribute('style', 'top:'+top+'px;left:'+left+'px;')
+              addClass(item, 'open')
+              var placeholder = document.createElement('tr')
+              placeholder = item.parentNode.insertBefore(placeholder, item)
+              placeholder.id = 'placeholder'
+            }
+          };
+
+          (function(){
+            for (var i = tr.length - 1; i >= 0; i--) {
+              tr[i].addEventListener('click', showDetails, false)
+            };
+          })();
+
+          // Helpers
+          function hasClass(elem, classname) {
+            var regexp = new RegExp('\\b' + classname + '\\b', 'g')
+            return elem.className.match(regexp)
+          }
+          function addClass(elem, classname) {
+            if (hasClass(elem, classname)) return
+            elem.className = elem.className + ' ' + classname
+            elem.className = elem.className.replace(/^\s+|\s+$/g, '')
+          }
+          function removeClass(elem, classname) {
+            if (!hasClass(elem, classname)) return
+            elem.className = elem.className.replace(classname, '')
+          }
+
+        })();
+      } catch(err) {}
+    </script>
+  </body>
+</html>

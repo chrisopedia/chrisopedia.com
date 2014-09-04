@@ -1,0 +1,52 @@
+.Posts .header {
+    margin: 1em 0;
+}
+.Posts .header .title,
+.Posts .header .description {
+    margin: 0;
+}
+.Posts .listing {
+    padding: 0;
+    list-style: none;
+}
+.Author {
+    overflow: hidden;
+    margin: 1em 0;
+}
+    .Author .avatar {
+        float: left;
+        margin-right: 1em;
+    }
+    .Author .name {
+        margin-top: 0;
+    }
+.Post {
+}
+    .Post .title {
+        margin: 0;
+    }
+    .Post .subtitle {
+        margin: 0 0 2rem;
+    }
+    .Post .timestamp {
+        display: block;
+        margin: 1.5em 0;
+    }
+    .Post .meta {
+        overflow: hidden;
+        margin: 1.5em 0;
+    }
+    .Post .meta .categories,
+    .Post .meta .tags {
+        margin: 0;
+    }
+    .Post .meta .term,
+    .Post .meta .item {
+        display: inline;
+        float: left;
+        margin: 0 1.5em 0 0;
+    }
+    .Post .meta .term {
+        display: none;
+        clear: left;
+    }

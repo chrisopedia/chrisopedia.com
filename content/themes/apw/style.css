@@ -1,0 +1,21 @@
+/*
+Theme Name: APW
+Theme URI: http://wordpress.org/extend/themes/apw
+Author: Newton of A Permanent Wreck
+Author URI: http://wrck.me/about
+Description: The default/beginning theme for developing my personal site.
+Version: 0.2.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:  gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: apw
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Resets */
+.skip-link, 
+.assistive-text { 
+    display: none; 
+}

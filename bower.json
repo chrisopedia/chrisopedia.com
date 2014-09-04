@@ -1,0 +1,12 @@
+{
+	"name" : "chrisopedia.com",
+	"version" : "0.2.2",
+	"main" : [
+		"./ui/compressed/common.css",
+		"./ui/compressed/common.js"
+	],
+	"dependencies" : {
+		"normalize-css" : "~2.1.2",
+		"jquery" : "~2.0.2"
+	}
+}

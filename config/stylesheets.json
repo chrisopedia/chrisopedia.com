@@ -1,0 +1,15 @@
+{
+    "files" : [
+        "ui/vendor/normalize-css/normalize.css",
+        "ui/stylesheets/fonts/ss-standard.css",
+        "ui/stylesheets/fonts/ss-social.css",
+        "ui/stylesheets/fonts/chunk-five.css",
+        "ui/stylesheets/fonts/prociono.css",
+        "ui/stylesheets/fonts/effra.css",
+        "ui/stylesheets/common.css",
+        "ui/stylesheets/typography.css",
+        "ui/stylesheets/layout.css",
+        "ui/stylesheets/modules.css",
+        "ui/stylesheets/modules/post.css"
+    ]
+}
