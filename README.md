@@ -1,5 +1,7 @@
 # Portfolio
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chrisopedia/chrisopedia.com.svg)](https://greenkeeper.io/)
+
 My personal portfolio site, where I write about the things that matter to me.
 
 ## Technologies Used
